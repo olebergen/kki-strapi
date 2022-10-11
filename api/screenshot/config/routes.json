@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/screenshots",
+      "handler": "screenshot.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/screenshots/count",
+      "handler": "screenshot.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/screenshots/:id",
+      "handler": "screenshot.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/screenshots",
+      "handler": "screenshot.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/screenshots/:id",
+      "handler": "screenshot.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/screenshots/:id",
+      "handler": "screenshot.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

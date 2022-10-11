@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/press-releases",
+      "handler": "press-release.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/press-releases/count",
+      "handler": "press-release.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/press-releases/:id",
+      "handler": "press-release.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/press-releases",
+      "handler": "press-release.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/press-releases/:id",
+      "handler": "press-release.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/press-releases/:id",
+      "handler": "press-release.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
