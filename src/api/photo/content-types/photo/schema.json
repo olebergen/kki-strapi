@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "photos",
+  "info": {
+    "singularName": "photo",
+    "pluralName": "photos",
+    "displayName": "Photo",
+    "name": "photo"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "Images": {
+      "type": "media",
+      "allowedTypes": [
+        "images"
+      ],
+      "multiple": true,
+      "required": false
+    }
+  }
+}

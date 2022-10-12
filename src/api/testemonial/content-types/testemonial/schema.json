@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testemonials",
+  "info": {
+    "singularName": "testemonial",
+    "pluralName": "testemonials",
+    "displayName": "Testemonial",
+    "name": "testemonial"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "private": false,
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Quote": {
+      "type": "richtext",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Company": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Image": {
+      "type": "media",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "multiple": false,
+      "required": true
+    },
+    "Allignment": {
+      "type": "enumeration",
+      "enum": [
+        "Left",
+        "Right"
+      ],
+      "default": "Right",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Priority": {
+      "type": "integer",
+      "required": true,
+      "default": 50,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

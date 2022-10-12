@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "imprints",
+  "info": {
+    "singularName": "imprint",
+    "pluralName": "imprints",
+    "displayName": "Imprint",
+    "name": "imprint"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Text": {
+      "type": "richtext",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

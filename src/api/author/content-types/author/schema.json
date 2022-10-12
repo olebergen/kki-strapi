@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "authors",
+  "info": {
+    "singularName": "author",
+    "pluralName": "authors",
+    "displayName": "Author",
+    "name": "author"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Avatar": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "multiple": false,
+      "required": true
+    },
+    "Company": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Shortdescription": {
+      "type": "richtext",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog.blog",
+      "mappedBy": "author"
+    }
+  }
+}

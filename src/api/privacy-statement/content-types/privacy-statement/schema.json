@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "privacy_statements",
+  "info": {
+    "singularName": "privacy-statement",
+    "pluralName": "privacy-statements",
+    "displayName": "Privacy-statement",
+    "name": "privacy-statement"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Text": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Text2": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}
