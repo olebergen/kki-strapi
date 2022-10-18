@@ -15,13 +15,16 @@
 ```sh
 docker run --name kki-postgres \
   -p 5432:5432 \
+  -v /home/ole/code/kki-strapi/data:/var/lib/postgresql/data/ \
   -e POSTGRES_USER=strapi \
   -e POSTGRES_PASSWORD=0000 \
   -e POSTGRES_DB=strapi \
   -d postgres
 ```
 
-- Dump der alten DB kopieren
+_Volume braucht absoluten Pfad, also dort den richtigen eintragen_
+
+- Dump der alten DB kopieren (wenn psql nicht lokal installiert ist)
 
 ```sh
 docker cp [pfad-zum-dump] kki-postgres:/tmp/dump.sql

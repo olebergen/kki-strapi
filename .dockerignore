@@ -1,0 +1,14 @@
+# strapi
+.tmp/
+.cache/
+.git/
+build/
+node_modules/
+
+# postgres
+dumps/
+data/
+
+# misc
+todo.md
+docker-compose.yaml
