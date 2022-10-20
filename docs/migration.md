@@ -2,11 +2,11 @@
 
 ## Codemigration
 
-- [Diesem Guide](https://strapi.io/blog/how-to-migrate-from-strapi-v3-to-v4-walkthrough) gefolgt. Beim anpassen der config die alte `plugins.js` und `database.js` uebernommen.
+- [Diesem Guide](https://strapi.io/blog/how-to-migrate-from-strapi-v3-to-v4-walkthrough) gefolgt. Beim anpassen der config die alte `plugins.js` und `database.js` übernommen.
 
   - `database.js` muss angepasst werden, Achtung: Es ist jetzt `connection.user` statt `username`.
 
-- Nach den codemods passt es fuer das alte repo soweit, die neuen codemods passen schon die Routen an, muss nicht mehr wie im Guide beschrieben manuell gemacht werden
+- Nach den codemods passt es für das alte repo soweit, die neuen codemods passen schon die Routen an, muss nicht mehr wie im Guide beschrieben manuell gemacht werden
 
 ## Datenmigration
 
@@ -22,9 +22,9 @@ docker run --name kki-postgres \
   -d postgres
 ```
 
-_Volume braucht absoluten Pfad, also dort den richtigen eintragen_
+Volume braucht absoluten Pfad, also dort den richtigen eintragen
 
-- Dump der alten DB kopieren (wenn psql nicht lokal installiert ist)
+- Dump der alten DB kopieren (wenn `psql` nicht lokal installiert ist)
 
 ```sh
 docker cp [pfad-zum-dump] kki-postgres:/tmp/dump.sql
@@ -48,13 +48,15 @@ psql -U strapi -c 'CREATE DATABASE strapiv3 OWNER strapi;'
 psql -U strapi -d strapiv3 < /tmp/dump.sql
 ```
 
+Wenn der Dump davor schon mal geladen wurde, dann geht er anscheinend kaputt. In dem Fall muss ein frischer Dump kopiert und geladen werden.
+
 - Docker Terminal verlassen, strapi Entwicklungsserver starten
 
 ```sh
 yarn develop
 ```
 
-Datenbank `strapi` ist jetzt mit leeren Tabellen mit der neuen Strapi v4 Struktur befuellt. Der Server muss vor den Migrationsskript wieder gestoppt werden.
+Datenbank `strapi` ist jetzt mit leeren Tabellen mit der neuen Strapi v4 Struktur befüllt. Der Server muss vor den Migrationsskript wieder gestoppt werden.
 
 - Strapi [migration-scripts](https://github.com/strapi/migration-scripts) repo klonen und `.env` erstellen
 
@@ -84,9 +86,9 @@ DATABASE_V4_SCHEMA=public
 EOL
 ```
 
-Achtung: `migrate/migrateI18n.js` hat einen Fehler und muss angepasst werden.
+**Achtung**: `migrate/migrateI18n.js` hat einen Fehler und muss angepasst werden.
 
-`const destination = 'i18n_locale'` hat einen falschen Wert und muss auf `i18n_locales` geaendert werden, wie die `source` Variable.
+`const destination = 'i18n_locale'` hat einen falschen Wert und muss auf `i18n_locales` gäendert werden, wie die `source` Variable.
 
 - Dependencies installieren und Datenmigration starten
 
@@ -94,3 +96,8 @@ Achtung: `migrate/migrateI18n.js` hat einen Fehler und muss angepasst werden.
 yarn
 yarn start
 ```
+
+## Strapi Anpassungen
+
+Nach der Migration hat Gatsby keinen Zugriff mehr, alle Berechtigungen unter `Content types builder` und `find` sowie `findOne` unter `Upload` müssen für `Public` gegeben werden.
+
