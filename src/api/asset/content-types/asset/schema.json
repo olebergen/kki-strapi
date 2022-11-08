@@ -25,15 +25,6 @@
       "type": "string",
       "required": true
     },
-    "Type": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true
-    },
     "Data": {
       "type": "media",
       "multiple": true,
@@ -81,6 +72,25 @@
         }
       },
       "type": "date"
+    },
+    "Type": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "press-news-article",
+        "press-release",
+        "logo",
+        "other",
+        "photo",
+        "poster",
+        "screenshot",
+        "video"
+      ],
+      "required": true
     }
   }
 }

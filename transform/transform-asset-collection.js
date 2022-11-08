@@ -152,7 +152,6 @@ const createAsset = async (body) => {
         "screenshot",
         screenshot.attributes.Title,
         screenshot.attributes.Image,
-
         null,
         null,
         null,
