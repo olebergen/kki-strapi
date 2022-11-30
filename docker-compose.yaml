@@ -46,7 +46,7 @@ services:
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
       POSTGRES_DB: ${DATABASE_NAME}
     volumes:
-      - ./data:/var/lib/postgresql/data/
+      - /opt/kki-docker-data:/var/lib/postgresql/data/
     ports:
       - "5432:5432"
     networks:
